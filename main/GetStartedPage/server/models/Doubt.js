@@ -32,6 +32,7 @@ const doubtSchema = new mongoose.Schema({
       ref: 'User'
     },
     content: String,
+    image: String,
     isAccepted: {
       type: Boolean,
       default: false
@@ -42,6 +43,7 @@ const doubtSchema = new mongoose.Schema({
     }
   }],
   tags: [String],
+  likes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   createdAt: {
     type: Date,
     default: Date.now
